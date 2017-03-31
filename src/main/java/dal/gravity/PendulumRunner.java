@@ -6,6 +6,7 @@ public class PendulumRunner {
 
     public static void main (String [] args) {
     	GravityModel gravityModel = new GravityConstant(GravityConstant.EARTHGRAVITY);
+    	GravityModel jupiterGravityModel = new GravityConstant(GravityConstant.JUPITERGRAVITY);
 	NumberFormat nf = NumberFormat.getInstance ();
 	nf.setMaximumFractionDigits (3);
 
@@ -21,6 +22,11 @@ public class PendulumRunner {
 	int iterations = (int) (1/delta);
 	System.out.println ("analytical vs. numerical displacement (fine, coarse)");
 	for (int second = 1; second <= 20; second++) {
+		if (second == 13) {
+            rp.setGravity(jupiterGravityModel);
+            sp.setGravity(jupiterGravityModel);
+            rpCoarse.setGravity(jupiterGravityModel);
+        }
 	    for (int i = 0; i < iterations; i++) rp.step ();
 	    for (int i = 0; i < 10; i++) rpCoarse.step (); 
 	    System.out.println ("t=" + second + "s: \t" + 

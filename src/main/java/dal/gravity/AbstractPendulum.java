@@ -48,5 +48,8 @@ public abstract class AbstractPendulum {
 
     //public double getGravitationalField () { return g; }
     public double getGravitationalField () { return gravityModel1.getGravitationalField(); }
+    public void setGravity(GravityModel gravityModel) {
+        gravityModel1 = gravityModel;
+    }
 
 }
