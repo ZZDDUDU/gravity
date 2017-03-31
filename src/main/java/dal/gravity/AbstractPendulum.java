@@ -12,7 +12,7 @@ public abstract class AbstractPendulum {
     private double stringLength, pointMass;
     protected double theta0; 
     protected double g; 
-
+    public static final double GRAVITY = 9.80665;
     /**
      * Creates a new Pendulum instance using
      * inLength: the string length (>0)
@@ -28,8 +28,8 @@ public abstract class AbstractPendulum {
 	if (validDisplacement (inTheta0)) theta0 = inTheta0;
 	else throw new IllegalArgumentException 
 		 ("invalid angular displacement: " + inTheta0);
-	if (validGC (inG)) g = inG;
-	else throw new IllegalArgumentException ("invalid local gravitational field: " + inG);
+	if (validGC (GRAVITY)) g = GRAVITY;
+	else throw new IllegalArgumentException ("invalid local gravitational field: " + GRAVITY);
     }
 
     private boolean validDisplacement (double val) { return (val >= 0); }
