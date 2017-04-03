@@ -2,7 +2,7 @@ package dal.gravity;
 
 public class GravityConstant implements GravityModel{
 
-    public static final double EARTHGRAVITY = 9.80665;
+    public static final double EARTHGRAVITY = 9.81;
     public static final double JUPITERGRAVITY = 25;
 
     private double gravity;
